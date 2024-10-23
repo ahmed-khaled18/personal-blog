@@ -1,0 +1,11 @@
+@if(blog$ |async){
+<div class="single-blog-container">
+  <div class="blog-card">
+    <h1 class="blog-title">{{ (blog$ | async)?.title }}</h1>
+    <p class="blog-date">
+      {{ (blog$ | async)?.updated_at | date : "MMMM d, y" }}
+    </p>
+    <div class="blog-content">{{ (blog$ | async)?.content }}</div>
+  </div>
+</div>
+}

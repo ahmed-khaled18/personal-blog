@@ -1,0 +1,40 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.single-blog-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  width: 50%;
+  height: 80%;
+}
+
+.blog-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.blog-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.blog-date {
+  font-size: 1rem;
+  color: #999;
+  margin-bottom: 1.5rem;
+}
+
+.blog-content {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
