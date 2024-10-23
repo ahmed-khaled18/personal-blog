@@ -1,1 +1,9 @@
-<p>blogs works!</p>
+<div class="blog-list">
+  <h1 class="blog-header">Personal Blog</h1>
+  @for(blog of blogs$ | async; track $index){
+  <div class="blog-item" [routerLink]="['/user/blog', blog.id]">
+    <div class="blog-title">{{ blog.title }}</div>
+    <div class="blog-date">{{ blog.updated_at | date : "MMMM d, yyyy" }}</div>
+  </div>
+  }
+</div>

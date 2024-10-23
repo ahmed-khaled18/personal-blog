@@ -8,9 +8,9 @@ import { SKIP_TOKEN_INTERCEPTOR } from '../../interceptors/auth-header.intercept
   providedIn: 'root',
 })
 export class BlogService {
-  private endpoint = `${EndpointsConstants.API_ENDPOINT}api/v1/blogs/`;
+  private readonly endpoint = `${EndpointsConstants.API_ENDPOINT}api/v1/blogs/`;
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   getBlogs() {
     return this.http.get<Blog[]>(this.endpoint, {

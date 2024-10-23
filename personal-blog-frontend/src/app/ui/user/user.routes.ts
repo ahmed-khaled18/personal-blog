@@ -12,7 +12,7 @@ export const userRoutes: Routes = [
       import('./pages/blogs/blogs.component').then((m) => m.BlogsComponent),
   },
   {
-    path: 'single-blog',
+    path: 'blog/:id',
     loadComponent: () =>
       import('./pages/single-blog/single-blog.component').then(
         (m) => m.SingleBlogComponent
