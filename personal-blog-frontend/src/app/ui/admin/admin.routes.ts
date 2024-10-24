@@ -24,7 +24,7 @@ export const adminRoutes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'edit-blog',
+    path: 'edit-blog/:id',
     loadComponent: () =>
       import('./pages/edit-blog/edit-blog.component').then(
         (m) => m.EditBlogComponent

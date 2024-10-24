@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { BlogService } from '../../../../services/blog-service/blog.service';
 import { Observable } from 'rxjs';
 import { Blog } from '../../../../services/blog-service/blog.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-single-blog',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './single-blog.component.html',
   styleUrl: './single-blog.component.scss',
 })

@@ -1,1 +1,20 @@
-<p>admin-blogs works!</p>
+<div class="blog-list">
+  <header>
+    <h1 class="blog-header">Personal Blog</h1>
+    <button routerLink="/admin/create-blog">+ Add</button>
+  </header>
+  @for(blog of blogs$ | async; track $index){
+  <div class="blog-item">
+    <div class="blog-title">{{ blog.title }}</div>
+    <div class="action-button-container">
+      <button
+        class="action-button"
+        [routerLink]="['/admin/edit-blog', blog.id]"
+      >
+        Edit
+      </button>
+      <button class="action-button">delete</button>
+    </div>
+  </div>
+  }
+</div>
