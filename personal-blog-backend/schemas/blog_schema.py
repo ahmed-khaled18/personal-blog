@@ -11,7 +11,7 @@ class BlogCreate(BlogBase):
 class BlogUpdate(BlogBase):
     pass
 
-class Blog(BlogBase):
+class Blog_Schema(BlogBase):
     id: int
     created_at: datetime
     updated_at: datetime

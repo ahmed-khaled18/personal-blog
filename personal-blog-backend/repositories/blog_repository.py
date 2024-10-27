@@ -1,16 +1,18 @@
 from sqlalchemy.orm import Session
-from models.blog_model import Blog
+from models.blog_model import Blog_Model
 from schemas.blog_schema import BlogCreate, BlogUpdate
 from datetime import datetime, timezone
 
-def get_blogs_from_db(db: Session, skip: int = 0, limit: int = 10):
-    return db.query(Blog).offset(skip).limit(limit).all()
+def get_blogs_from_db(db: Session, page: int = 1, size: int = 10):
+    skip = (page - 1) * size
+    limit = size
+    return db.query(Blog_Model).offset(skip).limit(limit).all()
 
 def get_blog_by_id(db: Session, blog_id: int):
-    return db.query(Blog).filter(Blog.id == blog_id).first()
+    return db.query(Blog_Model).filter(Blog_Model.id == blog_id).first()
 
 def create_blog_in_db(db: Session, blog: BlogCreate):
-    db_blog = Blog(
+    db_blog = Blog_Model(
         title=blog.title,
         content=blog.content,
         created_at=datetime.now(timezone.utc),

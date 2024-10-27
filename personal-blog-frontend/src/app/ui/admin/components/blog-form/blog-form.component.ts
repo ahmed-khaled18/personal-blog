@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
@@ -14,6 +14,7 @@ import {
   styleUrl: './blog-form.component.scss',
 })
 export class BlogFormComponent implements OnInit {
+  @Input({ required: true }) formMode!: 'create' | 'update';
   articleForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {}

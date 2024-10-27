@@ -4,8 +4,8 @@ from repositories.blog_repository import (
     get_blogs_from_db, create_blog_in_db, get_blog_by_id, update_blog_in_db, delete_blog_in_db
 )
 
-def get_blogs(db: Session, skip: int = 0, limit: int = 10):
-    return get_blogs_from_db(db, skip=skip, limit=limit)
+def get_blogs(db: Session, page: int = 1, size: int = 10):
+    return get_blogs_from_db(db, page=page, size=size)
 
 def get_blog(db: Session, blog_id: int):
     return get_blog_by_id(db, blog_id)

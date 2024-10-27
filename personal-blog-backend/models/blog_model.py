@@ -3,7 +3,7 @@ from sqlalchemy.orm import relationship
 from datetime import datetime, timezone
 from database.database import Base
 
-class Blog(Base):
+class Blog_Model(Base):
     __tablename__ = 'blogs'
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String, index=True)
